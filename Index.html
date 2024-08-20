@@ -60,10 +60,62 @@
         .content {
             width: 75%;
             padding: 1rem;
+            background-color: #fff;
+            margin-left: 1rem; /* Espaço entre o menu e o conteúdo */
+            border-radius: 5px; /* Adiciona borda arredondada para o conteúdo */
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Sombra para o conteúdo */
         }
 
         .content article {
             margin-bottom: 2rem;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .appointment {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .appointment h2 {
+            margin-bottom: 1rem;
+        }
+
+        .appointment form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .appointment label {
+            margin-bottom: 0.5rem;
+        }
+
+        .appointment input, .appointment textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .appointment button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .appointment button:hover {
+            background-color: #45a049;
         }
 
         footer {
@@ -88,19 +140,59 @@
                 <li><a href="#corpo-clinico">Corpo Clínico</a></li>
                 <li><a href="#nossa-historia">Nossa História</a></li>
                 <li><a href="#informacoes-gerais">Informações Gerais</a></li>
+                <li><a href="#agendamento">Agendar Consulta</a></li>
             </ul>
         </nav>
         <section class="content">
             <article>
                 <h2>Cuidados Básicos para seu Pet</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor sem in dui bibendum, ac condimentum urna interdum. Sed ut massa sed nunc lacinia venenatis. Mauris sit amet ultricies felis.</p>
-                <p>Phasellus sit amet cursus nunc. Curabitur id urna ac elit suscipit faucibus. Integer et velit nec lorem feugiat posuere.</p>
+                <img src="cuidar-do-pet.jpg" alt="Cuidados com o Pet">
+                <p>Manter seu pet saudável é fundamental para garantir uma vida longa e feliz. Algumas dicas básicas incluem:</p>
+                <ul>
+                    <li>Forneça uma dieta equilibrada e adequada para a idade do seu pet.</li>
+                    <li>Faça exercícios regularmente para manter o peso ideal.</li>
+                    <li>Realize visitas regulares ao veterinário para check-ups e vacinas.</li>
+                    <li>Mantenha a higiene do seu pet com banhos e escovação regulares.</li>
+                </ul>
             </article>
             <article>
                 <h2>Como Preparar Seu Pet para a Visita ao Veterinário</h2>
-                <p>Proin varius elit ut erat gravida, non pretium orci suscipit. Fusce aliquam tellus nec metus fermentum, nec ultricies urna vulputate. Aliquam erat volutpat. Suspendisse potenti.</p>
-                <p>Suspendisse potenti. Integer fermentum nunc in felis vehicula, nec fermentum metus tincidunt. Nam ut sem est. Sed dignissim quam eget risus blandit, ac vehicula sapien ultricies.</p>
+                <img src="visita-veterinario.jpg" alt="Visita ao Veterinário">
+                <p>Preparar seu pet para uma consulta veterinária pode reduzir o estresse e tornar a visita mais tranquila. Aqui estão algumas dicas:</p>
+                <ul>
+                    <li>Acostume seu pet com a caixa de transporte antes da consulta.</li>
+                    <li>Leve brinquedos ou cobertores que o seu pet gosta para deixá-lo mais confortável.</li>
+                    <li>Mantenha uma rotina normal de alimentação antes da consulta, a menos que o veterinário recomende o contrário.</li>
+                    <li>Se possível, faça uma breve caminhada antes da consulta para que seu pet possa se aliviar.</li>
+                </ul>
             </article>
+            <div class="appointment" id="agendamento">
+                <h2>Agendar Consulta</h2>
+                <form action="agendamento.php" method="post">
+                    <label for="nome">Nome do Tutor:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="pet">Nome do Pet:</label>
+                    <input type="text" id="pet" name="pet" required>
+                    
+                    <label for="data">Data da Consulta:</label>
+                    <input type="date" id="data" name="data" required>
+                    
+                    <label for="hora">Hora da Consulta:</label>
+                    <input type="time" id="hora" name="hora" required>
+                    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                    
+                    <button type="submit">Agendar Consulta</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
